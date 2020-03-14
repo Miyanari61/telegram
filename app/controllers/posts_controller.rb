@@ -9,8 +9,10 @@ class PostsController < ApplicationController
   def new
     @post = Post.new # フォーム用の空のインスタンスを生成する。
   end
+  
   def create
-    @post = Post.new(post_params) # ストロングパラメータを引数に
+    @post = current_user.posts.new(post_params)
+    # ストロングパラメータを引数に
     if @post.save # saveをしてデータベースに保存する。
     redirect_to @post, notice:'投稿を保存しました' # showページにリダイレクト
     else
