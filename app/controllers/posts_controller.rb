@@ -5,9 +5,11 @@ class PostsController < ApplicationController
   end
   def create
     @post = Post.new(post_params) # ストロングパラメータを引数に
-    @post.save # saveをしてデータベースに保存する。
+    if @post.save # saveをしてデータベースに保存する。
     redirect_to @post, notice:'投稿を保存しました' # showページにリダイレクト
-
+    else
+      render :new
+    end
   end
 
   def show
