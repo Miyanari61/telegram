@@ -31,6 +31,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'devise'
 gem 'rails-i18n'
 gem 'devise-i18n'
+gem 'kaminari'
+
 
 group :development, :test do
   gem 'faker'
