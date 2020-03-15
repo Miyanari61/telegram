@@ -33,7 +33,9 @@ gem 'rails-i18n'
 gem 'devise-i18n'
 gem 'kaminari'
 gem 'ransack'
-
+gem 'rails_admin'
+gem 'rails_admin-i18n'
+gem 'devise-bootstrap-views', '~> 1.0'
 
 group :development, :test do
   gem 'faker'
