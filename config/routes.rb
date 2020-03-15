@@ -1,7 +1,8 @@
-Rails.application.routes.draw do
-  devise_for :users
-  resources :posts
-  resources :comments, only: [ :create, :destroy ]
-  root 'posts#index'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-end
+  Rails.application.routes.draw do
+    # usersモデル追加時に生成される
+    devise_for :users
+    resources :posts
+    resources :comments, only: [ :create, :destroy ]
+    get 'comments' => redirect('posts')
+    root 'posts#index'
+  end
